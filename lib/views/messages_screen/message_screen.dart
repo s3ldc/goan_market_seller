@@ -18,13 +18,7 @@ class MessagesScreen extends StatelessWidget {
         leading:  IconButton(icon: const Icon(Icons.arrow_back, color: darkGrey),onPressed: (){
           Get.back();
         },),
-        backgroundColor: purpleColor,
-        actions: [
-          10.widthBox,
-          TextButton(
-              onPressed: () {}, child: normalText(text: "Save", color: white))
-        ],
-        title: boldText(text: "Messages ", color: white, size: 16.0),
+        title: boldText(text: "Messages ", color: Colors.black, size: 16.0),
       ),
       body: StreamBuilder(
         stream: StoreServices.getMessages(currentUser!.uid),

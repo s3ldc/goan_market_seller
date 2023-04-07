@@ -124,19 +124,19 @@ class _OrderdetailsState extends State<Orderdetails> {
                             .make()),
 
                     //order details section
-                    orderPlaceDetials(
+                    orderPlaceDetails(
                         d1: "${widget.data['order_code']}",
                         d2: "${widget.data['shipping_method']}",
                         title1: "order code",
                         title2: "shipping method"),
-                    orderPlaceDetials(
+                    orderPlaceDetails(
                         d1: intl.DateFormat()
                             .add_yMd()
                             .format((widget.data['order_date'])),
                         d2: "${widget.data['payment_method']}",
                         title1: "Order date",
                         title2: "Payment method"),
-                    orderPlaceDetials(
+                    orderPlaceDetails(
                         d1: "Unpaid",
                         d2: "order_placed ",
                         title1: "paymentstatus",
@@ -152,13 +152,13 @@ class _OrderdetailsState extends State<Orderdetails> {
                             children: [
                               boldText(
                                   text: "Shipping Address", color: purpleColor),
-                              "${widget.data['orderbyname']}".text.make(),
-                              "${widget.data['orderbyemail']}".text.make(),
-                              "${widget.data['orderbyaddress']}".text.make(),
-                              "${widget.data['orderbycity']}".text.make(),
-                              "${widget.data['orderbystate']}".text.make(),
-                              "${widget.data['orderbyphhone']}".text.make(),
-                              "${widget.data['orderbypostalcode']}".text.make(),
+                              "${widget.data['order_by_name']}".text.make(),
+                              "${widget.data['order_by_email']}".text.make(),
+                              "${widget.data['order_by_address']}".text.make(),
+                              "${widget.data['order_by_city']}".text.make(),
+                              "${widget.data['order_by_state']}".text.make(),
+                              "${widget.data['order_by_phone']}".text.make(),
+                              "${widget.data['order_by_postalcode']}".text.make(),
                             ],
                           ),
                           SizedBox(
@@ -199,10 +199,10 @@ class _OrderdetailsState extends State<Orderdetails> {
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    orderPlaceDetials(
+                    orderPlaceDetails(
                         title1: "${controller.orders[index]['title']}",
                         title2: "${controller.orders[index]['tprice']}",
-                        d1: "${controller.orders[index]['qty']}x}",
+                        d1: "${controller.orders[index]['qty']}}x",
                         d2: "Refundable"),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16),

@@ -1,8 +1,8 @@
 import 'package:goanmarketseller/const/const.dart';
 import 'package:goanmarketseller/views/widgets/normal_text.dart';
 
-Widget orderPlaceDetials({title1,title2,d1,d2}){
-  return Padding(padding: EdgeInsets.symmetric(horizontal: 16.0,vertical: 8.0),
+Widget orderPlaceDetails({title1,title2,d1,d2}){
+  return Padding(padding: const EdgeInsets.symmetric(horizontal: 16.0,vertical: 8.0),
   child: Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [

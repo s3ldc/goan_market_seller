@@ -42,6 +42,7 @@ class orderScreen extends StatelessWidget {
               return Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: SingleChildScrollView(
+                    physics: const BouncingScrollPhysics(),
                     child: Column(
                       children: List.generate(data.length, (index) {
                         var time = data[index]['order_date'].toDate();
@@ -54,13 +55,12 @@ class orderScreen extends StatelessWidget {
                               borderRadius: BorderRadius.circular(12)),
                           title: boldText(
                               text: '${data[index]['order_code']}',
-                              color: purpleColor,
-                              size: 14.0),
+                              color: purpleColor),
                           subtitle: Column(
                             children: [
                               Row(children: [
                                 const Icon(
-                                  Icons.calendar_today,
+                                  Icons.calendar_month,
                                   color: fontGrey,
                                 ),
                                 10.widthBox,
@@ -84,7 +84,7 @@ class orderScreen extends StatelessWidget {
                           ),
                           trailing: boldText(
                               text: ' ${data[index]['total_amount']}', color: purpleColor, size: 16.0),
-                        );
+                        ).card.rounded.make().box.margin(const EdgeInsets.only(bottom: 4)).make();
                       }),
                     ),
                   ));

@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
           } else {
             var data = snapshot.data!.docs;
             data = data.sortedBy((a, b) =>
-                a['p_wishlist'].length.compareTo(b['p_wishlist'].length));
+                b['p_wishlist'].length.compareTo(a['p_wishlist'].length));
 
             return Padding(
               padding: const EdgeInsets.all(9.0),
@@ -69,33 +69,35 @@ class HomeScreen extends StatelessWidget {
                     size: 16.0,
                   ),
                   20.heightBox,
-                  ListView(
-                    physics: const BouncingScrollPhysics(),
-                    shrinkWrap: true,
-                    children: List.generate(
-                        data.length,
-                        (index) => data[index]['p_wishlist'].length == 0
-                            ? const SizedBox()
-                            : ListTile(
-                                onTap: () {
-                                  Get.to(() => ProductDetails(
-                                        data: data[index],
-                                      ));
-                                },
-                                leading: Image.network(
-                                  data[index]['p_imgs'][0],
-                                  width: 100,
-                                  height: 100,
-                                  fit: BoxFit.cover,
-                                ),
-                                title: boldText(
-                                    text: '${data[index]['p_name']}',
-                                    color: fontGrey,
-                                    size: 14.0),
-                                subtitle: normalText(
-                                    text: "${data[index]['p_price']}",
-                                    color: darkGrey),
-                              )),
+                  Expanded(
+                    child: ListView(
+                      physics: const BouncingScrollPhysics(),
+                      shrinkWrap: true,
+                      children: List.generate(
+                          data.length,
+                          (index) => data[index]['p_wishlist'].length == 0
+                              ? const SizedBox()
+                              : ListTile(
+                                  onTap: () {
+                                    Get.to(() => ProductDetails(
+                                          data: data[index],
+                                        ));
+                                  },
+                                  leading: Image.network(
+                                    data[index]['p_imgs'][0],
+                                    width: 100,
+                                    height: 100,
+                                    fit: BoxFit.cover,
+                                  ),
+                                  title: boldText(
+                                      text: '${data[index]['p_name']}',
+                                      color: fontGrey,
+                                      size: 14.0),
+                                  subtitle: normalText(
+                                      text: "${data[index]['p_price']}",
+                                      color: darkGrey),
+                                )),
+                    ),
                   )
                 ],
               ),

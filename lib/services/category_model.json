@@ -1,7 +1,7 @@
 {
     "categories": [
         {
-            "name": "Women Dress",
+            "name": "Women Clothing",
             "subcategory": [
                 "Wedding & Event",
                 "Tops & Sets",
@@ -9,7 +9,7 @@
             ]
         },
         {
-            "name": "Men Clothing & Fashion",
+            "name": "Men Clothing",
             "subcategory": [
                 "Outwear & Jackets",
                 "Formal Dress",
@@ -17,7 +17,7 @@
             ]
         },
         {
-            "name": "Computer & Accessories",
+            "name": "Electronics",
             "subcategory": [
                 "Laptop",
                 "Gaming PC",
@@ -25,10 +25,11 @@
             ]
         },
         {
-            "name": "Automobile",
+            "name": "Personal Care",
             "subcategory": [
-                "Cars",
-                "Bikes"
+                "Health Care",
+                "Toiletry",
+                "Hair Oil"
             ]
         },
         {
@@ -52,7 +53,7 @@
             "subcategory": [
                 "Necklace",
                 "Gold",
-                "Earing"
+                "Earring"
             ]
         },
         {
@@ -64,11 +65,11 @@
             ]
         },
         {
-            "name": "Furniture",
+            "name": "Appliances",
             "subcategory": [
-                "Sofa",
-                "Bed",
-                "Home Textile"
+                "Refrigerator",
+                "Washing Machine",
+                "Air Conditioner"
             ]
         }
     ]

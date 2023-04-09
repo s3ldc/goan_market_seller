@@ -34,7 +34,7 @@ class Productscontroller extends GetxController {
   }
 
   populateCategoryList() {
-    category.clear();
+
     for (var item in category) {
       categoryList.add(item.name);
     }

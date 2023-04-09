@@ -69,10 +69,10 @@ class Addproduct extends StatelessWidget {
                     label: 'Quantity',
                     controller: controller.pquantityController),
                 10.heightBox,
-                productDropdown("category", controller.categoryList,
+                productDropdown("Choose Category", controller.categoryList,
                     controller.categoryvalue, controller),
                 10.heightBox,
-                productDropdown("SubCategory", controller.subCategoryList,
+                productDropdown("Choose SubCategory", controller.subCategoryList,
                     controller.subcategoryvalue, controller),
                 10.heightBox,
                 const Divider(

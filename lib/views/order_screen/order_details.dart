@@ -21,17 +21,17 @@ class _OrderdetailsState extends State<Orderdetails> {
   void initState() {
     super.initState();
     controller.getOrder(widget.data);
-    controller.confirmed.value  = widget.data['order_confirmed '];
-    controller.ondelivery.value  = widget.data['order_on_delivery '];
-    controller.delivered.value  = widget.data['order_delivered '];
-    // controller.confirmed.value  = widget.data['order_confirmed '];
+    controller.confirmed.value  = widget.data['order_confirmed'];
+    controller.ondelivery.value  = widget.data['order_on_delivery'];
+    controller.delivered.value  = widget.data['order_delivered'];
+
 
   }
 
   @override
   Widget build(BuildContext context) {
     return Obx(
-      () => Scaffold(
+          () => Scaffold(
         appBar: AppBar(
           leading: IconButton(
             icon: const Icon(Icons.arrow_back, color: fontGrey),
@@ -77,42 +77,47 @@ class _OrderdetailsState extends State<Orderdetails> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            boldText(
-                                text: "Order status:",
-                                color: purpleColor,
-                                size: 16.0),
+                            boldText(text: "Order status:", color: fontGrey, size: 16.0),
+                            SwitchListTile(
+                              activeColor: Colors.green,
+                              value: controller.confirmed.value,
+                              onChanged: (value) {
+                                // controller.confirmed.value = value;
+                              },
+                              title: boldText(text: "Placed", color: fontGrey),
+                            ),
                             SwitchListTile(
                               activeColor: Colors.green,
                               value: controller.confirmed.value,
                               onChanged: (value) {
                                 controller.confirmed.value = value;
+
+                                // controller.changeStatus(
+                                //     title: 'order_confirmed',
+                                //     status: value,
+                                //     docId: widget.data.id);
                               },
-                              title: boldText(text: "Placed", color: fontGrey),
+                              title:
+                              boldText(text: "Confirmed", color: fontGrey),
                             ),
                             SwitchListTile(
                               activeColor: Colors.green,
                               value: controller.ondelivery.value,
                               onChanged: (value) {
                                 controller.ondelivery.value = value;
-
-                                controller.changeStatus(
-                                    title: 'order_on_delivery',
-                                    status: value,
-                                    docId: widget.data.id);
+                                controller.changeStatus(title: 'order_on_delivery',status : value  ,docId: widget.data.id );
                               },
-                              title:
-                                  boldText(text: "Confirmed", color: fontGrey),
+                              title: boldText(text: "on Delivery ", color: fontGrey),
                             ),
                             SwitchListTile(
                               activeColor: Colors.green,
                               value: controller.delivered.value,
-                              onChanged: (value) {
+                              onChanged: (value){
                                 controller.delivered.value = value;
                                 controller.changeStatus(title: 'order_delivered',status : value  ,docId: widget.data.id );
                               },
-                              title: boldText(
-                                  text: "on Delivery ", color: fontGrey),
-                            ),
+                              title: boldText(text: 'Delivered', color: fontGrey),
+                                )
                           ],
                         )
                             .box
@@ -130,9 +135,7 @@ class _OrderdetailsState extends State<Orderdetails> {
                         title1: "order code",
                         title2: "shipping method"),
                     orderPlaceDetails(
-                        d1: intl.DateFormat()
-                            .add_yMd()
-                            .format((widget.data['order_date'])),
+                        d1: intl.DateFormat.yMd().format( widget.data['order_date'].toDate()),
                         d2: "${widget.data['payment_method']}",
                         title1: "Order date",
                         title2: "Payment method"),
@@ -148,7 +151,7 @@ class _OrderdetailsState extends State<Orderdetails> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               boldText(
                                   text: "Shipping Address", color: purpleColor),
@@ -202,7 +205,7 @@ class _OrderdetailsState extends State<Orderdetails> {
                     orderPlaceDetails(
                         title1: "${controller.orders[index]['title']}",
                         title2: "${controller.orders[index]['tprice']}",
-                        d1: "${controller.orders[index]['qty']}}x",
+                        d1: "${controller.orders[index]['qty']}x",
                         d2: "Refundable"),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16),

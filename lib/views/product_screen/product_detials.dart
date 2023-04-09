@@ -1,6 +1,4 @@
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-
 import '../../const/const.dart';
 import '../widgets/normal_text.dart';
 
@@ -13,7 +11,7 @@ class ProductDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: fontGrey),
+          icon: const Icon(Icons.arrow_back, color: fontGrey),
           onPressed: () {
             Get.back();
           },
@@ -31,12 +29,12 @@ class ProductDetails extends StatelessWidget {
             VxSwiper.builder(
               autoPlay: true,
               height: 350,
-              itemCount: data['p_img'].length,
+              itemCount: data['p_imgs'].length,
               aspectRatio: 16 / 9,
               viewportFraction: 1.0,
               itemBuilder: (context, index) {
                 return Image.network(
-                  data['p_imags'][index],
+                  data['p_imgs'][index],
                   width: double.infinity,
                   fit: BoxFit.cover,
                 );
@@ -87,11 +85,8 @@ class ProductDetails extends StatelessWidget {
                           ),
                           Row(
                             children: List.generate(
-                              3,
-                              (index) => Stack(
-                                alignment: Alignment.center,
-                                children: [
-                                  VxBox()
+                              data['p_colors'].length,
+                              (index) => VxBox()
                                       .size(40, 40)
                                       .roundedFull
                                       .color(Color(data['p_colors'][index]))
@@ -99,8 +94,6 @@ class ProductDetails extends StatelessWidget {
                                           horizontal: 4))
                                       .make()
                                       .onTap(() {})
-                                ],
-                              ),
                             ).toList(),
                           ),
                         ],
@@ -116,7 +109,7 @@ class ProductDetails extends StatelessWidget {
                               text: "${data['p_quantity']}items",
                               color: fontGrey),
                         ],
-                      ).box.padding(EdgeInsets.all(8)).make(),
+                      ).box.padding(const EdgeInsets.all(8)).make(),
                     ],
                   ).box.white.shadowSm.make(),
                   const Divider(),

@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:goanmarketseller/views/controllers/productscontroller.dart';
 import 'package:goanmarketseller/views/product_screen/productdropdown.dart';
 import 'package:goanmarketseller/views/product_screen/productimages.dart';
@@ -17,14 +16,15 @@ class Addproduct extends StatelessWidget {
     var controller = Get.find<Productscontroller>();
     return Obx(
       () => Scaffold(
+        backgroundColor: purpleColor,
         appBar: AppBar(
           leading: IconButton(
-            icon: Icon(Icons.arrow_back, color: fontGrey),
+            icon: const Icon(Icons.arrow_back, color: Colors.white),
             onPressed: () {
               Get.back();
             },
           ),
-          backgroundColor: Colors.white,
+          backgroundColor: purpleColor,
           title: boldText(text: "Add Products", size: 16.0),
           actions: [
             10.widthBox,

@@ -27,6 +27,7 @@ class Productscontroller extends GetxController {
   var selectedColorIndex = 0.obs;
 
   getCategories() async {
+    categoryList.clear();
     var data = await rootBundle.loadString("lib/services/category_model.json");
     var cat = categoryModelFromJson(data);
     category = cat.categories;

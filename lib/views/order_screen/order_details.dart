@@ -71,7 +71,7 @@ class _OrderdetailsState extends State<Orderdetails> {
                 physics: const BouncingScrollPhysics(),
                 child: Column(
                   children: [
-                    //order detivery status section
+                    //order delivery status section
                     Visibility(
                         visible: controller.confirmed.value,
                         child: Column(

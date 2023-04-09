@@ -1,7 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:goanmarketseller/services/store_services.dart';
 import 'package:goanmarketseller/views/product_screen/product_detials.dart';
 import 'package:goanmarketseller/views/widgets/loading_indicator.dart';
@@ -24,9 +22,9 @@ class productsScreen extends StatelessWidget {
         onPressed: () async {
           await controller.getCategories();
           controller.populateCategoryList();
-          Get.to(() => Addproduct());
+          Get.to(() => const Addproduct());
         },
-        child: Icon(
+        child: const Icon(
           Icons.add,
         ),
       ),
@@ -54,10 +52,8 @@ class productsScreen extends StatelessWidget {
             return Padding(
               padding: const EdgeInsets.all(8.0),
               child: SingleChildScrollView(
-                child: Column(children: [
-                  ListView(
-                    physics: const BouncingScrollPhysics(),
-                    shrinkWrap: true,
+                physics: const BouncingScrollPhysics(),
+                child: Column(
                     children: List.generate(
                         data.length,
                         (index) => ListTile(
@@ -67,7 +63,7 @@ class productsScreen extends StatelessWidget {
                                     ));
                               },
                               leading: Image.network(
-                                data[index]['p_img'][0],
+                                data[index]['p_imgs'][0],
                                 width: 100,
                                 height: 100,
                                 fit: BoxFit.cover,
@@ -84,30 +80,25 @@ class productsScreen extends StatelessWidget {
                                   10.widthBox,
                                   boldText(
                                       text: data[index]['is_featured'] == true
-                                          ? "featured"
+                                          ? "Featured"
                                           : '',
                                       color: green),
                                 ],
                               ),
                               trailing: VxPopupMenu(
                                 arrowSize: 0.0,
-                                child: Icon(Icons.more_vert_rounded),
                                 menuBuilder: () => Column(
-                                  children: [
-                                    ListView(
-                                      physics: const BouncingScrollPhysics(),
-                                      shrinkWrap: true,
                                       children: List.generate(
                                         popupmenutitles.length,
-                                        (i) => Padding(
+                                        (index) => Padding(
                                           padding: const EdgeInsets.all(12.0),
                                           child: Row(children: [
                                             Icon(
-                                              popupmenuIconslist[i],
+                                              popupmenuIconslist[index],
                                               color: data[index]
                                                               ['featured_id'] ==
                                                           currentUser!.uid &&
-                                                      i == 0
+                                                      index == 0
                                                   ? green
                                                   : darkGrey,
                                             ),
@@ -117,12 +108,12 @@ class productsScreen extends StatelessWidget {
                                                     data[index]['featured_id'] ==
                                                                 currentUser!
                                                                     .uid &&
-                                                            i == 0
+                                                            index == 0
                                                         ? "Removed featured"
-                                                        : popupmenutitles[i],
+                                                        : popupmenutitles[index],
                                                 color: darkGrey),
                                           ]).onTap(() {
-                                            switch (i) {
+                                            switch (index) {
                                               case 0:
                                                 if (data[index]
                                                         ['is_featured'] ==
@@ -149,14 +140,12 @@ class productsScreen extends StatelessWidget {
                                           }),
                                         ),
                                       ),
-                                    ),
-                                  ],
                                 ).box.white.width(200).rounded.make(),
                                 clickType: VxClickType.singleClick,
+                                child: const Icon(Icons.more_vert_rounded),
                               ),
                             )),
                   ),
-                ]),
               ),
             );
           }

@@ -21,7 +21,7 @@ class EditProfileScreen extends StatelessWidget {
         title: boldText(text: "Edit Profile", color: white, size: 16.0),
       ),
       body: Padding(
-        padding: EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
             Image.asset(imgproduct)
@@ -38,7 +38,7 @@ class EditProfileScreen extends StatelessWidget {
                 onPressed: () {},
                 child: normalText(text: "Change Image")),
             10.heightBox,
-            Divider(
+            const Divider(
               color: white,
             ),
             CustomeTextField(label:"Name",hint: "eg. Username"),

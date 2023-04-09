@@ -28,8 +28,4 @@ class StoreServices {
         .where('vendor_id', isEqualTo: uid)
         .snapshots();
   }
-  static getPopularProduct(uid){
-    return firestore.collection(productsCollection).where('vendor_id',isEqualTo: uid).orderBy('p_wishlist'.length);
-
-  }
 }

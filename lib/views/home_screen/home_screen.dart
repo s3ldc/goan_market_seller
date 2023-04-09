@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
           } else {
             var data = snapshot.data!.docs;
             data = data.sortedBy((a, b) =>
-                b['p_wishlist'].length.compareTo(a['p_wishlist'].length));
+                a['p_wishlist'].length.compareTo(b['p_wishlist'].length));
 
             return Padding(
               padding: const EdgeInsets.all(9.0),

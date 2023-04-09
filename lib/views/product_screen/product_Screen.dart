@@ -90,15 +90,14 @@ class productsScreen extends StatelessWidget {
                                 menuBuilder: () => Column(
                                       children: List.generate(
                                         popupmenutitles.length,
-                                        (index) => Padding(
+                                        (i) => Padding(
                                           padding: const EdgeInsets.all(12.0),
                                           child: Row(children: [
                                             Icon(
-                                              popupmenuIconslist[index],
+                                              popupmenuIconslist[i],
                                               color: data[index]
                                                               ['featured_id'] ==
-                                                          currentUser!.uid &&
-                                                      index == 0
+                                                          currentUser!.uid && i == 0
                                                   ? green
                                                   : darkGrey,
                                             ),
@@ -108,12 +107,12 @@ class productsScreen extends StatelessWidget {
                                                     data[index]['featured_id'] ==
                                                                 currentUser!
                                                                     .uid &&
-                                                            index == 0
+                                                            i == 0
                                                         ? "Removed featured"
-                                                        : popupmenutitles[index],
+                                                        : popupmenutitles[i],
                                                 color: darkGrey),
                                           ]).onTap(() {
-                                            switch (index) {
+                                            switch (i) {
                                               case 0:
                                                 if (data[index]
                                                         ['is_featured'] ==

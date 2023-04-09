@@ -67,7 +67,7 @@ class Productscontroller extends GetxController {
     for (var item in pImagesList) {
       if (item != null) {
         var filename = basename(item.path);
-        var destination = 'images/venders${currentUser!.uid}/$filename';
+        var destination = 'images/vendors/${currentUser!.uid}/$filename';
         Reference ref = FirebaseStorage.instance.ref().child(destination);
         await ref.putFile(item);
         var n = await ref.getDownloadURL();

@@ -75,7 +75,7 @@ class productsScreen extends StatelessWidget {
                               subtitle: Row(
                                 children: [
                                   normalText(
-                                      text: "\$ ${data[index]['p_price']}",
+                                      text: "\₹ ${data[index]['p_price']}",
                                       color: darkGrey),
                                   10.widthBox,
                                   boldText(

@@ -94,7 +94,7 @@ class HomeScreen extends StatelessWidget {
                                       color: fontGrey,
                                       size: 14.0),
                                   subtitle: normalText(
-                                      text: "${data[index]['p_price']}",
+                                      text: "\₹ ${data[index]['p_price']}",
                                       color: darkGrey),
                                 )),
                     ),

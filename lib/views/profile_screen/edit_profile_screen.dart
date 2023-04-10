@@ -1,11 +1,9 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'dart:io';
-
 import 'package:get/get.dart';
 import 'package:goanmarketseller/views/controllers/profile_controller.dart';
 import 'package:goanmarketseller/views/widgets/loading_indicator.dart';
-
 import '../../const/const.dart';
 import '../widgets/custom_textfield.dart';
 import '../widgets/normal_text.dart';

@@ -132,12 +132,12 @@ class _OrderdetailsState extends State<Orderdetails> {
                     orderPlaceDetails(
                         d1: "${widget.data['order_code']}",
                         d2: "${widget.data['shipping_method']}",
-                        title1: "order code",
+                        title1: "Order Code",
                         title2: "shipping method"),
                     orderPlaceDetails(
                         d1: intl.DateFormat.yMd().format( widget.data['order_date'].toDate()),
                         d2: "${widget.data['payment_method']}",
-                        title1: "Order date",
+                        title1: "Order Date",
                         title2: "Payment method"),
                     orderPlaceDetails(
                         d1: "Unpaid",
@@ -173,7 +173,7 @@ class _OrderdetailsState extends State<Orderdetails> {
                                 boldText(
                                     text: "Total Amount ", color: purpleColor),
                                 boldText(
-                                    text: "${widget.data['total_amount']}",
+                                    text: "\₹ ${widget.data['total_amount']}",
                                     color: red),
                               ],
                             ),
@@ -204,7 +204,7 @@ class _OrderdetailsState extends State<Orderdetails> {
                   children: [
                     orderPlaceDetails(
                         title1: "${controller.orders[index]['title']}",
-                        title2: "${controller.orders[index]['tprice']}",
+                        title2: "\₹ ${controller.orders[index]['tprice']}",
                         d1: "${controller.orders[index]['qty']}x",
                         d2: "Refundable"),
                     Padding(

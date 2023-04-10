@@ -1,6 +1,5 @@
 import 'package:goanmarketseller/const/const.dart';
 import 'package:goanmarketseller/views/widgets/custom_textfield.dart';
-
 import '../widgets/normal_text.dart';
 import 'package:intl/intl.dart' as intl;
 

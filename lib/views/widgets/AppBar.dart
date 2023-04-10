@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:goanmarketseller/views/widgets/normal_text.dart';
 import 'package:intl/intl.dart' as intl;
 import '../../const/const.dart';

@@ -1,5 +1,3 @@
-
-import 'package:flutter/material.dart';
 import 'package:goanmarketseller/const/const.dart';
 import 'package:goanmarketseller/views/widgets/normal_text.dart';
 

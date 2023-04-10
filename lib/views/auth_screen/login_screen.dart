@@ -4,7 +4,6 @@ import 'package:goanmarketseller/views/home_screen/home.dart';
 import 'package:goanmarketseller/views/widgets/normal_text.dart';
 import '../../const/const.dart';
 import 'package:goanmarketseller/views/widgets/our_button.dart';
-
 import '../widgets/loading_indicator.dart';
 
 class LoginScreen extends StatelessWidget {

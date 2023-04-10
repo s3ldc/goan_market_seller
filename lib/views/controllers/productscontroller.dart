@@ -121,6 +121,5 @@ class Productscontroller extends GetxController {
 
     await firestore.collection(productsCollection).doc(docid).delete();
 
-
   }
 }

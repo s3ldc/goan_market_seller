@@ -1,8 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:goanmarketseller/const/colors.dart';
 import 'package:goanmarketseller/const/const.dart';
-import 'package:goanmarketseller/consts/consts.dart';
-import 'package:goanmarketseller/views/widgets/normal_text.dart';
 
 Widget productImage({required label, onPress}) {
   return "$label"

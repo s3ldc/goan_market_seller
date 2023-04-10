@@ -73,7 +73,7 @@ class ProductDetails extends StatelessWidget {
                   ),
                   10.heightBox,
                   boldText(
-                      text: "\$ ${data['p_price']}", color: red, size: 18.0),
+                      text: "\₹ ${data['p_price']}", color: red, size: 18.0),
                   20.heightBox,
                   Column(
                     children: [
@@ -106,7 +106,7 @@ class ProductDetails extends StatelessWidget {
                             child: boldText(text: "Quantity", color: fontGrey),
                           ),
                           normalText(
-                              text: "${data['p_quantity']}items",
+                              text: "${data['p_quantity']} items",
                               color: fontGrey),
                         ],
                       ).box.padding(const EdgeInsets.all(8)).make(),

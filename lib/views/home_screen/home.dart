@@ -1,13 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:goanmarketseller/const/const.dart';
 import 'package:goanmarketseller/views/controllers/homeScreenController.dart';
 import 'package:goanmarketseller/views/home_screen/home_screen.dart';
 import 'package:goanmarketseller/views/order_screen/order_Screen.dart';
 import 'package:goanmarketseller/views/profile_screen/profile_screen.dart';
 import 'package:goanmarketseller/views/widgets/normal_text.dart';
-
 import '../product_screen/product_Screen.dart';
 
 class Home extends StatelessWidget {
